@@ -1,0 +1,128 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.3rem;
+    position: fixed;
+    top: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1.5rem;
+    color: white;
+    backdrop-filter: blur(8px);
+    border-radius:8px;
+    z-index: 1000;
+    transition: 1s ease-in;
+  }
+ 
+  .logo {
+    color: white;
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+  }
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  .navlinks {
+    display: flex;
+    gap: 2rem;
+    transition: 1s ease-in;
+  }
+  .navlinks li .Link {
+    position: relative;
+    color: white;
+    font-weight: 300;
+  }
+  .navlinks li .Link::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    height: 3px;
+    top: 24px;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
+  }
+  .navlinks li .Link:hover::before {
+    width: 100%;
+    right: 0;
+  }
+  
+  .visitbtn {
+    padding: 0.7rem 1.2rem;
+    border-radius: 3rem;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    text-wrap: nowrap;
+    transition: 0.2s ease-in-out;
+    background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
+  }
+  .gitLink{
+    color: black;
+  }
+  .visitbtn:hover {
+    background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+    transform: scale(1.03);
+  }
+  .menuicon {
+    font-size: 2rem;
+    display: none;
+  }
+  .showMenu {
+    display: flex !important;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .header {
+      padding: 1rem 1rem;
+      gap: 1.8rem;
+    }
+    .header .logo {
+      font-size: 1.3rem;
+    }
+    .header .visitbtn {
+      display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .header .menuicon{
+        display: block;
+      }
+    .navlinks{
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      position: absolute;
+      top: 100%;
+      margin-top: 1rem;
+      width: 100%;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 3rem;
+      transition: 1s ease-in;
+      display: none;
+    }
+    .navlinks li{
+      margin-top: 1.5rem;
+      padding: 0.7rem;
+    }
+    .header{
+      padding: 1rem 3rem;
+      gap: 6rem;
+    }
+    .header .logo{
+      font-size: 1.5rem;
+    }
+
+}
